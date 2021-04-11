@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.10)
+
+# find all source files
+file(GLOB SOURCES
+	./*.cpp
+)
+
+# add the executable
+add_library(imgui STATIC ${SOURCES})
+
+target_link_libraries(imgui ole32 oleaut32 imm32 winmm)
+
+target_include_directories(imgui PUBLIC ./)
